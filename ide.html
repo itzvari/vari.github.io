@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Квантові алгоритми – IDE</title>
+<link href="CSS/main.css" rel="stylesheet"/>
+<link href="CSS/ide.css" rel="stylesheet"/>
+
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header class="navbar">
+<a class="logo" href="index.html"><div class="logo-icon">Q</div><span>КВАНТОВИЙ КРИПТОАНАЛІЗ</span></a>
+<nav><ul class="nav-menu">
+<li><a href="index.html">Про автора та роботу</a></li>
+<li class="dropdown"><a href="foundations.html">Основи обчислень ▾</a><ul class="dropdown-menu">
+<li><a href="foundations.html#sec1">1. Основні поняття квантових технологій</a></li>
+<li><a href="foundations.html#sec2">2. Квантові обчислення та квантові стани</a></li>
+<li><a href="foundations.html#sec3">3. Прихована підгрупова задача (HSP)</a></li>
+<li><a href="foundations.html#sec4">4. Програмні засоби для обчислень</a></li>
+</ul></li>
+<li><a href="theory.html">Теорія</a></li>
+<li><a href="stages.html">5 Етапів</a></li>
+<li><a class="active" href="ide.html">Python IDE</a></li>
+<li><a href="sources.html">Джерела</a></li>
+</ul></nav>
+</header>
+<main class="ide-page">
+<header class="page-header"><h1>Інтерактивний каталог квантових алгоритмів (МАН)</h1><p>Наукові описи, формули, квантові схеми та Python-код.</p></header>
+<section class="algo-buttons" id="algo-buttons"></section>
+<section class="algo-view">
+<h2 id="algo-title"></h2>
+<div class="algo-block"><h3>Опис алгоритму</h3><div id="algo-description"></div></div>
+<div class="algo-block"><h3>Основні формули</h3><div id="algo-formulas"></div></div>
+<div class="algo-block"><h3>Квантова схема</h3><img alt="Квантова схема" class="algo-image" id="algo-image" src=""/></div>
+<div class="algo-block"><h3>Результат моделювання</h3><div class="result-box" id="algo-result"></div></div>
+<div class="algo-block"><h3>Код (Python / Qiskit)</h3><pre class="code-box" id="algo-code"></pre>
+<button id="copy-code">Скопіювати код</button><button id="download-code">Завантажити код</button></div>
+</section>
+</main>
+<script src="JS/ide.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>5 Етапів — Квантовий Криптоаналіз</title>
+<link href="CSS/main.css" rel="stylesheet"/>
+<link href="CSS/stages.css" rel="stylesheet"/>
+<!-- MathJax для відображення формул -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<!-- Шапка із випадаючим меню -->
+<header class="navbar">
+<a class="logo" href="index.html">
+<div class="logo-icon">Q</div>
+<span>КВАНТОВИЙ КРИПТОАНАЛІЗ</span>
+</a>
+<nav>
+<ul class="nav-menu">
+<li><a href="index.html">Про автора та роботу</a></li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="foundations.html">Основи обчислень ▾</a>
+<ul class="dropdown-menu">
+<li><a href="foundations.html#sec1">1. Основні поняття квантових технологій</a></li>
+<li><a href="foundations.html#sec2">2. Квантові обчислення та квантові стани</a></li>
+<li><a href="foundations.html#sec3">3. Прихована підгрупова задача (HSP)</a></li>
+<li><a href="foundations.html#sec4">4. Програмні засоби для обчислень</a></li>
+</ul>
+</li>
+<li><a href="theory.html">Теорія</a></li>
+<li><a class="active" href="stages.html">5 Етапів</a></li>
+<li><a href="ide.html">Python IDE</a></li>
+<li><a href="sources.html">Джерела</a></li>
+</ul>
+</nav>
+</header>
+<main class="main-container">
+<div class="inline-style-0">
+<h1 class="inline-style-1">
+                5 Етапів Алгоритму Куперберга
+            </h1>
+<p class="inline-style-2">
+                Покроковий аналіз виконання квантової схеми для визначення прихованого зсуву \(s\) у діедральній групі \(D_n\).
+            </p>
+</div>
+<div class="timeline-container">
+<!-- Етап 1 -->
+<article class="stage-card">
+<div class="stage-header">
+<div class="stage-number">1</div>
+<h2 class="stage-title">Ініціалізація та Квантова Суперпозиція</h2>
+</div>
+<div class="stage-content">
+<p>
+                        На першому етапі готуються два регістри кубітів. За допомогою перетворення Адамара (\(H\)) перший регістр переводиться у стан рівномірної суперпозиції всіх можливих елементів групи \(G\).
+                    </p>
+<div class="formula-block">
+                        \[ |\psi_1\rangle = \frac{1}{\sqrt{|G|}} \sum_{g \in G} |g\rangle |0\rangle \]
+                    </div>
+<ul class="key-points">
+<li>Створення початкового стану кубітів \(|0\rangle^{\otimes n}\).</li>
+<li>Застосування вентилів Адамара до вхідного регістра.</li>
+</ul>
+</div>
+</article>
+<!-- Етап 2 -->
+<article class="stage-card">
+<div class="stage-header">
+<div class="stage-number">2</div>
+<h2 class="stage-title">Виклик Квантового Оракула \(U_f\)</h2>
+</div>
+<div class="stage-content">
+<p>
+                        Оракул обчислює функцію \(f(g)\) у другому регістрі. Завдяки заплутуванню (Entanglement) стан першого регістра пов'язується зі значенням функції.
+                    </p>
+<div class="formula-block">
+                        \[ |\psi_2\rangle = \frac{1}{\sqrt{|G|}} \sum_{g \in G} |g\rangle |f(g)\rangle \]
+                    </div>
+<ul class="key-points">
+<li>Заплутування вхідного та вихідного регістрів.</li>
+<li>Збереження властивості прихованого зсуву \(f(g_1) = f(g_2)\).</li>
+</ul>
+</div>
+</article>
+<!-- Етап 3 -->
+<article class="stage-card">
+<div class="stage-header">
+<div class="stage-number">3</div>
+<h2 class="stage-title">Редукція та генерація фазових станів</h2>
+</div>
+<div class="stage-content">
+<p>
+                        Вимірювання другого регістра редукує стан першого регістра до випадкової пари, що відрізняється на прихований зсув \(s\). Це створює так званий <strong>фазовий кубіт (Phase State)</strong>.
+                    </p>
+<div class="formula-block">
+                        \[ |\phi(k)\rangle = \frac{1}{\sqrt{2}} \left( |0\rangle + e^{\frac{2\pi i k s}{N}} |1\rangle \right) \]
+                    </div>
+<ul class="key-points">
+<li>Отримання кубітів із фазовою інформацією про значення \(s\).</li>
+<li>Параметр \(k\) обирається випадковим чином при кожному запуску.</li>
+</ul>
+</div>
+</article>
+<!-- Етап 4 -->
+<article class="stage-card">
+<div class="stage-header">
+<div class="stage-number">4</div>
+<h2 class="stage-title">Фазове просіювання (Phase Sieving)</h2>
+</div>
+<div class="stage-content">
+<p>
+                        Основне ядро алгоритму Куперберга. Квантові стани комбінуються парами за допомогою алгоритму поєднання (combination algorithm) для зменшення значення фазового коефіцієнта \(k\) до менших степенів двійки.
+                    </p>
+<div class="formula-block">
+                        \[ |\phi(k_1)\rangle \otimes |\phi(k_2)\rangle \xrightarrow{\text{Sieving}} |\phi(k_1 - k_2)\rangle \]
+                    </div>
+<ul class="key-points">
+<li>Рекурсивне комбінування та вимірювання допоміжних кубітів.</li>
+<li>Зменшення кількості невідомих змінних до одного біта.</li>
+</ul>
+</div>
+</article>
+<!-- Етап 5 -->
+<article class="stage-card">
+<div class="stage-header">
+<div class="stage-number inline-style-3">5</div>
+<h2 class="stage-title">Вимірювання та обчислення зсуву \(s\)</h2>
+</div>
+<div class="stage-content">
+<p>
+                        Коли параметр \(k\) зводиться до \(N/2\), застосовується вентиль Адамара та виконується фінальне вимірювання у Z-базисі. Це дає біт прихованого значення \(s\). Повторення процедури дозволяє повністю відновити значення \(s\).
+                    </p>
+<div class="formula-block inline-style-4">
+                        \[ \text{Результат: } s = (s_1, s_2, \dots, s_n) \in \mathbb{Z}_N \]
+                    </div>
+<ul class="key-points">
+<li>Фінальне деструктивне вимірювання результуючого кубіта.</li>
+<li>Точне відновлення значення прихованого елемента \(s\).</li>
+</ul>
+</div>
+</article>
+</div>
+</main>
+<script src="JS/main.js"></script>
+</body>
+</html>

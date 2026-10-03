@@ -1,0 +1,19 @@
+
+/* IDE page */
+.ide-page{padding-top:80px;}
+.ide-page .page-header{background:linear-gradient(90deg,#0057b8,#00a3ff);color:#fff;padding:25px;text-align:center;}
+.algo-buttons{display:flex;gap:12px;padding:22px 20px;justify-content:center;flex-wrap:wrap;}
+.algo-buttons button{padding:12px 22px;background:#0b1120;color:#cbd5e1;border:1px solid #38bdf8;border-radius:8px;cursor:pointer;font-size:1rem;font-weight:700;}
+.algo-buttons button:hover,.algo-buttons button.active{background:#38bdf8;color:#07101e;}
+.algo-view{background:#0b1120;border:1px solid #1e2d4a;margin:10px auto 40px;padding:28px;width:92%;max-width:1100px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.35);}
+.algo-view h2{text-align:center;color:#fff;margin:0 0 28px;}
+.algo-block{margin-bottom:30px;}
+.algo-block h3{margin:0 0 12px;color:#38bdf8;border-left:4px solid #38bdf8;padding-left:10px;}
+.algo-description,.algo-block p{color:#cbd5e1;line-height:1.7;}
+.algo-image{display:block;width:100%;max-height:520px;object-fit:contain;border:1px solid #1e2d4a;border-radius:10px;background:#070c18;padding:10px;}
+.formula{background:#070c18;border:1px solid #1e2d4a;border-radius:8px;padding:16px;margin:12px 0;text-align:center;color:#fff;overflow-x:auto;}
+.result-box{background:#070c18;border:1px solid #1e2d4a;border-radius:8px;padding:14px;color:#38bdf8;font-family:Consolas,monospace;white-space:pre-wrap;}
+.code-box{width:100%;min-height:360px;max-height:650px;overflow:auto;box-sizing:border-box;background:#050911;color:#e2e8f0;border:1px solid #1e2d4a;border-radius:8px;padding:18px;font:14px/1.55 Consolas,monospace;white-space:pre;}
+#copy-code,#download-code{margin-top:12px;padding:9px 16px;background:#0057b8;color:#fff;border:0;border-radius:6px;cursor:pointer;margin-right:10px;}
+#copy-code:hover,#download-code:hover{background:#0072e8;}
+@media(max-width:800px){.navbar{padding:12px 15px;}.logo span{display:none;}.nav-menu{gap:4px!important;flex-wrap:wrap;justify-content:flex-end;}.nav-menu a{font-size:.8rem!important;padding:5px!important;}.ide-page{padding-top:120px;}.algo-view{width:96%;padding:18px;}}
